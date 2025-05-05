@@ -1,50 +1,54 @@
-# Welcome to your Expo app 👋
+📄 Travel App UI - Component Overview
+This project contains a few React Native components that together build a clean travel experience screen. The components are designed to be theme-aware, meaning they change colors depending on whether the app is in light mode or dark mode.
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Here’s a quick breakdown of each file and what it does:
 
-## Get started
+componentWrapper.jsx
+This file wraps the main UI components (Homecom1, Homecom2, and Homecom3) with the app’s theme context.
 
-1. Install dependencies
+Instead of each component calling useTheme inside itself, the wrapper gives them the theme automatically. This makes the components simpler and keeps the code clean.
 
-   ```bash
-   npm install
-   ```
+Homecom1.jsx
+This component is like the trip overview screen.
+It shows:
 
-2. Start the app
+A greeting to the user ("Hello Chhavi!")
 
-   ```bash
-    npx expo start
-   ```
+Upcoming trip details (to Tokyo)
 
-In the output, you'll find options to open the app in a
+Trip date, number of days, group size, and activities planned
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+It uses a background image with a gradient overlay for a nice effect and shows trip stats with icons like a clock, people, and a checklist.
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+Homecom2.jsx
+This screen displays Flight and Accommodation information.
 
-## Get a fresh project
+It has two parts:
 
-When you're ready, run:
+Flight Details: From Delhi to Narita (Tokyo) with flight date and time
 
-```bash
-npm run reset-project
-```
+Hotel Cards: Scrollable cards showing two different hotels, check-in/check-out times, nights stayed, and booking status (like Confirmed or Pending)
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+The design is kept clean, and the user can swipe horizontally through hotel options.
 
-## Learn more
+Homecom3.jsx
+This component shows the day-wise activities planned during the trip.
 
-To learn more about developing your project with Expo, look at the following resources:
+It includes:
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+A row of days (27th Jan, 28th Jan, etc.) you can swipe through
 
-## Join the community
+A list of activities for each day (for example, visiting Senso-ji Temple, Tokyo Skytree, Kimono wearing)
 
-Join our community of developers creating universal apps.
+Each activity card shows the timing, how long it takes, and where pickup happens.
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+It gives users a clear view of what’s planned for each day.
+
+In Simple Words:
+componentWrapper.jsx = handles theme passing
+
+Homecom1.jsx = shows welcome and trip overview
+
+Homecom2.jsx = shows flight + hotel bookings
+
+Homecom3.jsx = shows activities day-by-day
